@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+// Todo : delete this part upon deployment
+/* -----------=========== My little tools section ===========----------- */
+Route::get('/del', function () {
+    Schema::dropIfExists('groups');
+});
