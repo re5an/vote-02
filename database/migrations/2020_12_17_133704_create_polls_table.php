@@ -20,6 +20,7 @@ class CreatePollsTable extends Migration
             $table->timestamp('due_date')->nullable();
             $table->integer('private');
             $table->string('token');
+            $table->string('type')->default('vote');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('set null');
