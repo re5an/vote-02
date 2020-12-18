@@ -17,4 +17,8 @@ class Poll extends Model
     {
         return $this->hasMany('App\Question');
     }
+    public function group()
+    {
+        return $this->belongsToMany('App\Group')->withTimestamps();
+    }
 }

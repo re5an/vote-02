@@ -24,4 +24,10 @@ class Group extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User')
+            ->withPivot('role', 'status')->withTimestamps();
+    }
 }

@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Poll');
     }
+    public function group()
+    {
+        return $this->belongsToMany('App\Group')
+            ->withPivot('role', 'status')->withTimestamps();
+    }
 }
