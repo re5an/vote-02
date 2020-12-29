@@ -14,8 +14,6 @@ class CreateGroupPollTable extends Migration
     public function up()
     {
         Schema::create('group_poll', function (Blueprint $table) {
-            $table->bigIncrements('id');
-
             $table->unsignedBigInteger('group_id');
             $table->foreign('group_id')->references('id')->on('groups')
                 ->onDelete('cascade');
